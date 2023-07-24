@@ -6,8 +6,8 @@
 
 - ## Stack
   - Spring Boot framework 
-  - Spring jpa
-  - PRIMEFACES
+  - Spring JPA
+  - Primefaces
  
 - ## Prerequisites
   - Maven
