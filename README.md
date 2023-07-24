@@ -5,7 +5,7 @@
   - Spring jpa
   - PRIMEFACES
  
-- ##Prerequisites
+- ## Prerequisites
 - Maven
 - JDK
 - schema name (demo)
