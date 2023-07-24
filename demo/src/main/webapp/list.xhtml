@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <style>
+        * {
+
+            padding: 0;
+            margin: 0;
+            height: max-content;
+        }
+        body{
+            display: flex;
+            background-color:#D8C4B6;
+        }
+        .container {
+            width: 40rem;
+            height: 30rem;
+            margin: 10rem 20rem ;
+            background-color: white;
+            justify-content: space-between;
+            padding:2rem;
+            text-align: center;
+        }
+        h3{
+            padding-bottom: 2rem;
+        }
+
+        .reg-button{
+            width: 7rem;
+        }
+    </style>
+</h:head>
+
+<f:event type="preRenderView" listener="#{userListController.initUserList()}"/>
+
+<h:body>
+    <h:form>
+
+        <div class="container">
+            <h3>User List</h3>
+
+            <p:dataTable var="user" value="#{userListController.userList}" rowKey="#{user.id}">
+                <p:column headerText="Id">
+                    <h:outputText value="#{user.id}" />
+                </p:column>
+                <p:column headerText="Name">
+                    <h:outputText value="#{user.username}" />
+                </p:column>
+                <p:column headerText="Email">
+                    <h:outputText value="#{user.email}" />
+                </p:column>
+                <p:column headerText="GitHub Account">
+                    <h:outputText value="#{user.gitHubAcc}" />
+                </p:column>
+            </p:dataTable>
+
+        <br/>
+        <br/>
+
+            <p:commandButton value="Back" styleClass="reg-button" action="#{registerController.backButton()}"/>
+
+        </div>
+    </h:form>
+</h:body>
+</html>
