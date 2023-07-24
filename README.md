@@ -6,8 +6,8 @@
   - PRIMEFACES
  
 - ## Prerequisites
-- Maven
-- JDK
-- schema name (demo)
+  - Maven
+  - JDK
+  - schema name (demo)
 
 Once the application is up, it is available at:(http://localhost:8080/index.xhtml)http://localhost:8080/index.xhtml
