@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            height: max-content;
+        }
+        body{
+            display: flex;
+            background-color:#D8C4B6;
+        }
+        .container {
+            width: 40rem;
+            height: 30rem;
+            margin: 10rem 20rem ;
+            background-color: white;
+            justify-content: space-between;
+            padding:2rem 4rem;
+            text-align: center;
+        }
+        h3{
+            padding-bottom: 2rem;
+        }
+
+        .reg-button{
+            width: 7rem;
+        }
+    </style>
+</h:head>
+<h:body>
+    <h:form prependId="false">
+
+        <p:growl id="growl" showDetail="true" />
+
+        <div class="container">
+            <h3>Login</h3>
+
+            <div class="grid ui-fluid">
+                <div class="col-12 md:col-4">
+                    <div class="ui-inputgroup">
+                        <div class="ui-inputgroup-addon"><i class="pi pi-user"></i></div>
+                        <p:inputText id="username" placeholder="User name" value="#{loginController.authReq.username}"/>
+                    </div>
+                </div>
+            </div>
+
+        <br/>
+        <br/>
+
+            <div class="grid ui-fluid">
+                <div class="col-12 md:col-4">
+                    <div class="ui-inputgroup">
+                        <div class="ui-inputgroup-addon"><i class="pi pi-key"></i></div>
+                        <p:password id="password" placeholder="Password" value="#{loginController.authReq.password}"/>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <p:commandButton value="Login" styleClass="reg-button" action="#{loginController.login()}" update="growl"/>
+
+        </div>
+    </h:form>
+</h:body>
+</html>
